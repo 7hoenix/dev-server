@@ -4,7 +4,7 @@ var port = process.env.PORT || 3000;
 
 var app = express();
 
-let lessons = [];
+let lessons = ["8/7k/8/7K/P7/8/8/8 w - - - -"];
 let randomSeed = () => {
   return Math.floor(Math.random() * 100);
 }
@@ -31,8 +31,8 @@ app.post("/api/lesson", (req, res, next) => {
   }
 });
 
-app.get("/api/lesson/:id", (req, res, next) => {
-  const lesson = lessons[id];
+app.get("/api/lesson", (req, res, next) => {
+  const lesson = lessons[lessons.length - 1];
   res.json({"board": lesson.fen});
 });
 
