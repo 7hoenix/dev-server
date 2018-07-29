@@ -33,7 +33,7 @@ app.post("/api/lesson", (req, res, next) => {
 
 app.get("/api/lesson/:id", (req, res, next) => {
   const lesson = lessons[id];
-  res.json({"fen": lesson.fen});
+  res.json({"board": lesson.fen});
 });
 
 app.get("/api/seed", (req, res, next) => {
