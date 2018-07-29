@@ -4,7 +4,12 @@ var port = process.env.PORT || 3000;
 
 var app = express();
 
-let lessons = ["8/7k/8/7K/P7/8/8/8 w - - - -"];
+const preloadedLesson = {
+  id: 0,
+  fen: "3k3Q/8/3K4/8/8/8/8/8 w - - 0 0",
+  seed: 12345
+}
+let lessons = [preloadedLesson];
 let randomSeed = () => {
   return Math.floor(Math.random() * 100);
 }
